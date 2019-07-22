@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Hexo">
+  <title>TriplesWithBitwiseAndEqualToZero | Hexo</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="TriplesWithBitwiseAndEqualToZero | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Question: 981. Time Based Key-Value StoreCreate a timebased key-value store class TimeMap, that supports two operations.  set(string key, string value, int timestamp)  Stores the key and value, along">
 <meta name="keywords" content="leetcode">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/blog/" class="avatar_target">
     <img class="avatar" src="/blog/img/avatar.jpg" />
@@ -308,12 +308,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-TriplesWithBitwiseAndEqualToZero" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Welcome-page"><span class="toc-text">Welcome page</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-to-write-blog"><span class="toc-text">Why to write blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Author"><span class="toc-text">关于Author</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于博客平台"><span class="toc-text">关于博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">TriplesWithBitwiseAndEqualToZero</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-22 14:03:03'>2019-07-22 14:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-–-Pancake-Sorting"><span class="toc-text">Question: –  Pancake Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -326,29 +369,56 @@
     }
 </style>
 </div>
-            <h1 id="Welcome-page"><a href="#Welcome-page" class="headerlink" title="Welcome page"></a>Welcome page</h1><h2 id="Why-to-write-blog"><a href="#Why-to-write-blog" class="headerlink" title="Why to write blog"></a>Why to write blog</h2><blockquote>
-<p>Write the thought in my life</p>
-</blockquote>
-<blockquote>
-<p>Clearly writhe thought as some difficulties</p>
-</blockquote>
-<h2 id="关于Author"><a href="#关于Author" class="headerlink" title="关于Author"></a>关于Author</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="关于博客平台"><a href="#关于博客平台" class="headerlink" title="关于博客平台"></a>关于博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question-–-Pancake-Sorting"><a href="#Question-–-Pancake-Sorting" class="headerlink" title="Question: –  Pancake Sorting"></a>Question: –  Pancake Sorting</h2><p><strong>Example1</strong></p>
+<p><strong>Example2</strong></p>
+<p><strong>Note</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; pancakeSort(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">**Result**</span><br><span class="line"></span><br><span class="line">### Analysis</span><br><span class="line"></span><br><span class="line">### Second Answer</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**Result**</span><br><span class="line"></span><br><span class="line">## Python Answer</span><br><span class="line">### First Answer</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**Result**</span><br><span class="line"></span><br><span class="line">### Analysis</span><br><span class="line"></span><br><span class="line">### Second Answer</span><br></pre></td></tr></table></figure>
+
+<pre><code>**Result**
+
+**Summary**</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论. </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>TriplesWithBitwiseAndEqualToZero</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-22, 14:03:03</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-22, 14:03:03</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/22/TriplesWithBitwiseAndEqualToZero/" title="TriplesWithBitwiseAndEqualToZero">https://binbinbear.github.io/blog/2019/07/22/TriplesWithBitwiseAndEqualToZero/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
