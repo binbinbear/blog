@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Question: 9 –  Palindrome NumberDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example1  Input: 121Output: true  Example2  Input:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T06:15:29.527Z">
+<meta property="og:updated_time" content="2019-07-25T06:28:59.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PalindromeNumber">
 <meta name="twitter:description" content="Question: 9 –  Palindrome NumberDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example1  Input: 121Output: true  Example2  Input:">
@@ -350,7 +350,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-25 14:15:29'>2019-07-23 23:10</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-25 14:28:59'>2019-07-23 23:10</time>
         
     </div>
     <div class="article-meta">
@@ -419,6 +419,7 @@
 <h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def isPalindrome(self, x):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type x: int</span><br><span class="line">        :rtype: bool</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">       if x &lt; 0 or (x % 10 == 0 and x != 0):</span><br><span class="line">            return False;</span><br><span class="line">        n = 0;</span><br><span class="line">        while n &lt; x:</span><br><span class="line">            n = n * 10 + x% 10</span><br><span class="line">            x = int(x/10)</span><br><span class="line">        if n == x or int(n/10) == x:</span><br><span class="line">            return True;</span><br><span class="line">        else:</span><br><span class="line">            return False;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong><br>Runtime: 48 ms, faster than 79.44% of Python online submissions for Palindrome Number.<br>Memory Usage: 11.7 MB, less than 78.07% of Python online submissions for Palindrome Number.</p>
+<p><strong>Analysis</strong><br>If the python version is 3.x, input value is always str, and if you want to read a number, you should explicitly cast it into int.</p>
 <p><strong>Summary</strong></p>
 
       
@@ -437,7 +438,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
     <p><span class="copy-title">发布时间:</span>2019-07-23, 23:10:47</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-25, 14:15:29</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-25, 14:28:59</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/23/PalindromeNumber/" title="PalindromeNumber">https://binbinbear.github.io/blog/2019/07/23/PalindromeNumber/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
