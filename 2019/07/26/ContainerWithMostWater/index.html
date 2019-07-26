@@ -6,18 +6,18 @@
   <meta name="keywords" content=" leetcode ">
   <meta name="description" content="ContainerWithMostWater | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Question: 9 –  Palindrome NumberDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example1  Input: 121Output: true  Example2  Input:">
+<meta name="description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PalindromeNumber">
-<meta property="og:url" content="https://binbinbear.github.io/blog/2019/07/23/PalindromeNumber/index.html">
+<meta property="og:title" content="ContainerWithMostWater">
+<meta property="og:url" content="https://binbinbear.github.io/blog/2019/07/26/ContainerWithMostWater/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Question: 9 –  Palindrome NumberDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example1  Input: 121Output: true  Example2  Input:">
+<meta property="og:description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T06:28:59.400Z">
+<meta property="og:updated_time" content="2019-07-26T07:47:33.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PalindromeNumber">
-<meta name="twitter:description" content="Question: 9 –  Palindrome NumberDetermine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example1  Input: 121Output: true  Example2  Input:">
+<meta name="twitter:title" content="ContainerWithMostWater">
+<meta name="twitter:description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -358,7 +358,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-26 15:17:28'>2019-07-26 15:15</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-26 15:47:33'>2019-07-26 15:15</time>
         
     </div>
     <div class="article-meta">
@@ -405,7 +405,7 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
 
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxArea(int[] height) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxArea(int[] height) &#123;</span><br><span class="line">        if (height == null || height.length &lt; 2) return 0;</span><br><span class="line">        int left = 0;</span><br><span class="line">        int right = height.length - 1;</span><br><span class="line">        int result = height[left] &gt; height[right]? (right - left) * height[right]: (right - left) * height[left];</span><br><span class="line">        int tmp = result;</span><br><span class="line">        for (; left &lt; right; ) &#123;</span><br><span class="line">           if (height[left] &gt; height[right]) &#123;</span><br><span class="line">                while (right &gt; left &amp;&amp; height[right - 1] &lt;= height[right]) &#123;</span><br><span class="line">                    right --;</span><br><span class="line">                &#125;</span><br><span class="line">                right --;</span><br><span class="line">                if (right &gt; left) &#123;</span><br><span class="line">                     tmp = height[left] &gt; height[right]? (right - left) * height[right]: (right - left) * height[left];</span><br><span class="line">                     result = tmp &gt; result? tmp: result;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                while (right &gt; left &amp;&amp; height[left + 1] &lt;= height[left]) &#123;</span><br><span class="line">                    left ++;</span><br><span class="line">                &#125;</span><br><span class="line">                left ++;</span><br><span class="line">                if (right &gt; left) &#123;</span><br><span class="line">                    tmp = height[left] &gt; height[right]? (right - left) * height[right]: (right - left) * height[left];</span><br><span class="line">                    result = tmp &gt; result? tmp: result;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
 <h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
@@ -435,7 +435,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
     <p><span class="copy-title">发布时间:</span>2019-07-26, 15:15:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-26, 15:17:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-26, 15:47:33</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/26/ContainerWithMostWater/" title="ContainerWithMostWater">https://binbinbear.github.io/blog/2019/07/26/ContainerWithMostWater/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
