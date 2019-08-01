@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>PancakeSorting | Hexo</title>
+  <title>RomanToInteger | Hexo</title>
   <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="PancakeSorting | Hexo">
+  <meta name="description" content="RomanToInteger | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
 <meta name="keywords" content="leetcode">
@@ -350,9 +350,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-PancakeSorting" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-RomanToInteger" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">PancakeSorting</h1>
+        <h1 class="article-title">RomanToInteger</h1>
     
     <div class="article-meta">
         
@@ -374,7 +374,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-18 22:35:34'>2019-07-18 13:27</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 12:15:49'>2019-08-01 12:12</time>
         
     </div>
     <div class="article-meta">
@@ -396,7 +396,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-969-Pancake-Sorting"><span class="toc-text">Question: 969: Pancake Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-13-–-Roman-to-Integer"><span class="toc-text">Question: 13 –  Roman to Integer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -411,36 +411,46 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question-969-Pancake-Sorting"><a href="#Question-969-Pancake-Sorting" class="headerlink" title="Question: 969: Pancake Sorting"></a>Question: 969: Pancake Sorting</h2><p>Given an array A, we can perform a pancake flip: We choose some positive integer k &lt;= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.</p>
-<p>Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.</p>
-<p><strong>Example1</strong></p>
+        <h2 id="Question-13-–-Roman-to-Integer"><a href="#Question-13-–-Roman-to-Integer" class="headerlink" title="Question: 13 –  Roman to Integer"></a>Question: 13 –  Roman to Integer</h2><p>Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.<br>For example, two is written as II in Roman numeral, just two one’s added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:</p>
+<p>I can be placed before V (5) and X (10) to make 4 and 9.<br>X can be placed before L (50) and C (100) to make 40 and 90.<br>C can be placed before D (500) and M (1000) to make 400 and 900.<br>Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.<br><strong>Example1</strong></p>
 <blockquote>
-<p>Input: [3,2,4,1]<br>Output: [4,2,4,3]<br>Explanation:<br>We perform 4 pancake flips, with k values 4, 2, 4, and 3.<br>Starting state: A = [3, 2, 4, 1]<br>After 1st flip (k=4): A = [1, 4, 2, 3]<br>After 2nd flip (k=2): A = [4, 1, 2, 3]<br>After 3rd flip (k=4): A = [3, 2, 1, 4]<br>After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted.</p>
+<p>Input: “III”<br>Output: 3</p>
 </blockquote>
 <p><strong>Example2</strong></p>
 <blockquote>
-<p>Input: [1,2,3]<br>Output: []<br>Explanation: The input is already sorted, so there is no need to flip anything.<br>Note that other answers, such as [3, 3], would also be accepted.</p>
+<p>Input: “IV”<br>Output: 4</p>
+</blockquote>
+<p><strong>Example3</strong></p>
+<blockquote>
+<p>Input: “IX”<br>Output: 9</p>
+</blockquote>
+<p><strong>Example4</strong></p>
+<blockquote>
+<p>Input: “LVIII”<br>Output: 58<br>Explanation: L = 50, V= 5, III = 3.</p>
+</blockquote>
+<p><strong>Example5</strong></p>
+<blockquote>
+<p>Input: “MCMXCIV”<br>Output: 1994<br>Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.</p>
 </blockquote>
 <p><strong>Note</strong></p>
-<blockquote>
-<p>1 &lt;= A.length &lt;= 100<br>A[i] is a permutation of [1, 2, …, A.length]</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; pancakeSort(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int romanToInt(String s) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;Integer&gt; pancakeSort(int[] A) &#123;</span><br><span class="line">       List&lt;Integer&gt; operator = new ArrayList&lt;&gt;();</span><br><span class="line">       if (A.length == 0) return operator;</span><br><span class="line">       List&lt;Integer&gt; n = Arrays.stream(A).boxed().collect(Collectors.toList());</span><br><span class="line">       List&lt;Integer&gt; sorted = Arrays.stream(A).boxed().sorted().collect(Collectors.toList());</span><br><span class="line">       for (int index = A.length - 1; index &gt; 0; index --) &#123;</span><br><span class="line">           if (!n.get(index).equals(sorted.get(index))) &#123;</span><br><span class="line">               int place = n.indexOf(sorted.get(index));</span><br><span class="line">               if (place != 0) &#123;</span><br><span class="line">                   operator.add(place + 1);</span><br><span class="line">                   pancakeFlip(n, place + 1);</span><br><span class="line">               &#125;</span><br><span class="line">               operator.add(index + 1);</span><br><span class="line">               pancakeFlip(n, index + 1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return operator;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">    public void pancakeFlip(List&lt;Integer&gt; A, int k) &#123;</span><br><span class="line">       int left = 0, right = k - 1;</span><br><span class="line">       while (left &lt; right) &#123;</span><br><span class="line">           int t = A.get(left);</span><br><span class="line">           A.set(left, A.get(right));</span><br><span class="line">           A.set(right, t);</span><br><span class="line">           left ++;</span><br><span class="line">           right --;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def romanToInt(self, s):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        &quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong><br>Runtime: 43 ms, faster than 6.43% of Java online submissions for Pancake Sorting.<br>Memory Usage: 37.1 MB, less than 87.97% of Java online submissions for Pancake Sorting.</p>
-<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>This answer ignore the question note that A[i] is a permutation of [1, 2, …, A.length].</p>
-<h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public  List&lt;Integer&gt; pancakeSort(int[] A) &#123;</span><br><span class="line">    List&lt;Integer&gt; operator = new ArrayList&lt;&gt;();</span><br><span class="line">    if (A.length == 0) return operator;</span><br><span class="line">    for (int index = A.length - 1, t; index &gt; 0; index --) &#123;</span><br><span class="line">        if (A[index] != index + 1) &#123;</span><br><span class="line">            for (t = index - 1; A[t] != index + 1; t --);</span><br><span class="line">            if (t != 0) &#123;</span><br><span class="line">                operator.add(t + 1);</span><br><span class="line">                pancakeFlip(A, t + 1);</span><br><span class="line">            &#125;</span><br><span class="line">            operator.add(index + 1);</span><br><span class="line">            pancakeFlip(A, index + 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return operator;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public  void pancakeFlip(int[] A, int k) &#123;</span><br><span class="line">    int left = 0, right = k - 1;</span><br><span class="line">    while (left &lt; right) &#123;</span><br><span class="line">        int t = A[left];</span><br><span class="line">        A[left] = A[right];</span><br><span class="line">        A[right] = t;</span><br><span class="line">        left ++;</span><br><span class="line">        right --;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong><br>Runtime: 1 ms, faster than 100.00% of Java online submissions for Pancake Sorting.<br>Memory Usage: 36.1 MB, less than 87.97% of Java online submissions for Pancake Sorting.</p>
-<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def pancakeSort(self, A):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type A: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        result = list()</span><br><span class="line">        for i in range(len(A), 0, -1):</span><br><span class="line">            if A[i - 1] != i:</span><br><span class="line">                for j in range(i - 2, 0, -1):</span><br><span class="line">                    if A[j] == i:</span><br><span class="line">                        result.append(j + 1)</span><br><span class="line">                        self.flip(A, j + 1)</span><br><span class="line">                        break</span><br><span class="line">                result.append(i)</span><br><span class="line">                self.flip(A, i)</span><br><span class="line">        return result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def flip(self, A, k):</span><br><span class="line">        left = 0</span><br><span class="line">        right = k - 1</span><br><span class="line">        while left &lt; right:</span><br><span class="line">            temp = A[left]</span><br><span class="line">            A[left] = A[right]</span><br><span class="line">            A[right] = temp</span><br><span class="line">            left += 1</span><br><span class="line">            right -= 1</span><br></pre></td></tr></table></figure>
+<p><strong>Result</strong></p>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong><br>Runtime: 28 ms, faster than 83.89% of Python online submissions for Pancake Sorting.<br>Memory Usage: 11.7 MB, less than 65.74% of Python online submissions for Pancake Sorting.</p>
-<h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><pre><code>Not use local python statment</code></pre><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def pancakeSort(self, A):</span><br><span class="line">    res = []</span><br><span class="line">    for x in range(len(A), 1, -1):</span><br><span class="line">        i = A.index(x)</span><br><span class="line">        res.extend([i + 1, x])</span><br><span class="line">        A = A[:i:-1] + A[:i]</span><br><span class="line">    return res</span><br></pre></td></tr></table></figure>
+<p><strong>Result</strong></p>
+<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong><br>Runtime: 28 ms, faster than 83.89% of Python online submissions for Pancake Sorting.<br>Memory Usage: 11.7 MB, less than 76.85% of Python online submissions for Pancake Sorting.</p>
-<p><strong>Summary</strong><br>range(start, stop, step)<br>index find the the specific number<br>array[start:stop:step]<br>if step is positive, start default is 0, stop default is len(array)<br>else if step is negative, start default is -1, stop default is -len(array) - 1</p>
+<p><strong>Result</strong></p>
+<h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<p><strong>Summary</strong></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论. </span>
@@ -454,12 +464,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>PancakeSorting</p>
+    <p><span class="copy-title">文章标题:</span>RomanToInteger</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-18, 13:27:44</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-18, 22:35:34</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/18/PancakeSorting/" title="PancakeSorting">https://binbinbear.github.io/blog/2019/07/18/PancakeSorting/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-01, 12:12:27</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 12:15:49</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/08/01/RomanToInteger/" title="RomanToInteger">https://binbinbear.github.io/blog/2019/08/01/RomanToInteger/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
