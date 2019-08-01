@@ -6,18 +6,18 @@
   <meta name="keywords" content=" leetcode ">
   <meta name="description" content="RomanToInteger | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
+<meta name="description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ContainerWithMostWater">
-<meta property="og:url" content="https://binbinbear.github.io/blog/2019/07/26/ContainerWithMostWater/index.html">
+<meta property="og:title" content="RomanToInteger">
+<meta property="og:url" content="https://binbinbear.github.io/blog/2019/08/01/RomanToInteger/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
+<meta property="og:description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T07:47:33.398Z">
+<meta property="og:updated_time" content="2019-08-01T06:09:56.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ContainerWithMostWater">
-<meta name="twitter:description" content="Question: 11 –  Container With Most WaterGiven n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of li">
+<meta name="twitter:title" content="RomanToInteger">
+<meta name="twitter:description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -374,7 +374,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 12:15:49'>2019-08-01 12:12</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 14:09:56'>2019-08-01 12:12</time>
         
     </div>
     <div class="article-meta">
@@ -438,9 +438,9 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def romanToInt(self, s):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        &quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public int romanToInt(String s) &#123;</span><br><span class="line">       if (s == null || s.isEmpty()) return 0;</span><br><span class="line">       String[] romanChar = &#123;&quot;M&quot;, &quot;CM&quot;, &quot;D&quot;, &quot;CD&quot;, &quot;C&quot;, &quot;XC&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;&#125;;</span><br><span class="line">       int[] money = &#123;1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1&#125;;</span><br><span class="line">       int result = 0;</span><br><span class="line">       for (int i = 0; i &lt; s.length(); ) &#123;</span><br><span class="line">           int incident = 0;</span><br><span class="line">           for (int j = 0; j &lt; romanChar.length; j++) &#123;</span><br><span class="line">               if (s.startsWith(romanChar[j], i)) &#123;</span><br><span class="line">                   incident = money[j];</span><br><span class="line">                   i += romanChar[j].length();</span><br><span class="line">                   break;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           if (incident == 0) return -1;</span><br><span class="line">           result += incident;</span><br><span class="line">       &#125;</span><br><span class="line">       return result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong></p>
+<p><strong>Result</strong><br>Runtime: 4 ms, faster than 76.25% of Java online submissions for Roman to Integer.<br>Memory Usage: 36.3 MB, less than 100.00% of Java online submissions for Roman to Integer.</p>
 <h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
@@ -468,7 +468,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
     <p><span class="copy-title">发布时间:</span>2019-08-01, 12:12:27</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-01, 12:15:49</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 14:09:56</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/08/01/RomanToInteger/" title="RomanToInteger">https://binbinbear.github.io/blog/2019/08/01/RomanToInteger/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
