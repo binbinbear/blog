@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>3SumClosest | Hexo</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="3SumClosest | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
+<meta name="keywords" content="leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RomanToInteger">
+<meta property="og:url" content="https://binbinbear.github.io/blog/2019/08/01/RomanToInteger/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-01T06:09:56.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RomanToInteger">
+<meta name="twitter:description" content="Question: 13 –  Roman to IntegerRoman numerals are represented by seven different symbols: I, V, X, L, C, D and M.For example, two is written as II in Roman numeral, just two one’s added together. Twe">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/blog/css/style.css?v=1" rel="stylesheet">
+
+<link href="/blog/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/blog/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/blog/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="/blog">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/blog/" class="avatar_target">
+    <img class="avatar" src="/blog/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Bernie Chen</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(11)</small></div></li>
+    
+        
+            
+            <li><div data-rel="leetcode">leetcode<small>(10)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">leetcode</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/26/ContainerWithMostWater/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="ContainerWithMostWater">ContainerWithMostWater</span>
+            <span class="post-date" title="2019-07-26 15:15:02">2019/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/08/03/3SumClosest/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="3SumClosest">3SumClosest</span>
+            <span class="post-date" title="2019-08-03 12:01:59">2019/08/03</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/26/IntegerToRoman/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="IntegerToRoman">IntegerToRoman</span>
+            <span class="post-date" title="2019-07-26 15:55:36">2019/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/18/PancakeSorting/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="PancakeSorting">PancakeSorting</span>
+            <span class="post-date" title="2019-07-18 13:27:44">2019/07/18</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/17/LargestTimeFromDigits/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="LargestTimeFromDigits">LargestTimeFromDigits</span>
+            <span class="post-date" title="2019-07-17 23:34:55">2019/07/17</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/23/PalindromeNumber/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="PalindromeNumber">PalindromeNumber</span>
+            <span class="post-date" title="2019-07-23 23:10:47">2019/07/23</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/08/01/RomanToInteger/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="RomanToInteger">RomanToInteger</span>
+            <span class="post-date" title="2019-08-01 12:12:27">2019/08/01</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/19/TimeBasedKeyValueStore/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="TimeBasedKeyValueStore">TimeBasedKeyValueStore</span>
+            <span class="post-date" title="2019-07-19 11:35:31">2019/07/19</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/22/TriplesWithBitwiseAndEqualToZero/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="TriplesWithBitwiseAndEqualToZero">TriplesWithBitwiseAndEqualToZero</span>
+            <span class="post-date" title="2019-07-22 14:08:21">2019/07/22</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/blog/2019/07/23/ZigZagConversion/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="ZigZagConversion">ZigZagConversion</span>
+            <span class="post-date" title="2019-07-23 22:44:12">2019/07/23</span>
+        </a>
+        
+        <a  class=""
+           href="/blog/2019/07/17/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-17 16:57:08">2019/07/17</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-3SumClosest" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">3SumClosest</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-08-05 15:01:48'>2019-08-03 12:01</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-16-–-3-sum-closest"><span class="toc-text">Question: 16 –  3 sum closest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fastest-Answer"><span class="toc-text">Fastest Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-2"><span class="toc-text">Analysis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-3"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question-16-–-3-sum-closest"><a href="#Question-16-–-3-sum-closest" class="headerlink" title="Question: 16 –  3 sum closest"></a>Question: 16 –  3 sum closest</h2><p>Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p><strong>Example1</strong></p>
+<blockquote>
+<p>Given array nums = [-1, 2, 1, -4], and target = 1.</p>
+</blockquote>
+<p>The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</p>
+<p><strong>Example2</strong></p>
+<blockquote>
+<p>abc</p>
+</blockquote>
+<p><strong>Note</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; solution(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public int threeSumClosest(int[] nums, int target) &#123;</span><br><span class="line">    if (nums.length &lt; 3) return -1;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    int result = nums[0] + nums[1] + nums[2];</span><br><span class="line">    for (int i = 0; i &lt; nums.length - 2; i ++) &#123;</span><br><span class="line">        for (int j = i + 1, k = nums.length  - 1; j &lt; k; ) &#123;</span><br><span class="line">            int temp = nums[i] + nums[j] + nums[k];</span><br><span class="line">            if (temp &lt; target) &#123;</span><br><span class="line">                j ++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                k --;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (Math.abs(temp - target) &lt; Math.abs(result - target)) &#123;</span><br><span class="line">                result = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong><br>Runtime: 6 ms, faster than 44.38% of Java online submissions for 3Sum Closest.<br>Memory Usage: 36.3 MB, less than 100.00% of Java online submissions for 3Sum Closest.</p>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><p>The nature method has O(n3) complexity. Using two side close method, which update according the relationship between temp sum and the target, make left and right to close. Which reduce the complexity from O(n2) to O(n1), when fix the outside value. Thus, thie comlexity is O(logn + n*O(n) ) = O(n);</p>
+<h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public int threeSumClosest(int[] nums, int target) &#123;</span><br><span class="line">    if (nums.length &lt; 3) return -1;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    int result = nums[0] + nums[1] + nums[2];</span><br><span class="line">    int diff = Math.abs(result - target);</span><br><span class="line">    for (int i = 0; i &lt; nums.length - 2; i ++) &#123;</span><br><span class="line">        for (int j = i + 1, k = nums.length  - 1; j &lt; k; ) &#123;</span><br><span class="line">            int temp = nums[i] + nums[j] + nums[k];</span><br><span class="line">            if (temp &lt; target) &#123;</span><br><span class="line">                j ++;</span><br><span class="line">                int d = target - temp;</span><br><span class="line">                if (d &lt; diff) &#123;</span><br><span class="line">                    result = temp;</span><br><span class="line">                    diff = d;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                k --;</span><br><span class="line">                int d = temp -target;</span><br><span class="line">                if (d &lt; diff) &#123;</span><br><span class="line">                    result = temp;</span><br><span class="line">                    diff = d;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong><br>Runtime: 5 ms, faster than 63.80% of Java online submissions for 3Sum Closest.<br>Memory Usage: 36.5 MB, less than 100.00% of Java online submissions for 3Sum Closest.</p>
+<p>###Thrid Answer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">public int threeSumClosest(int[] nums, int target) &#123;</span><br><span class="line">      if (nums.length &lt; 3) return -1;</span><br><span class="line">      Arrays.sort(nums);</span><br><span class="line">      int result = nums[0] + nums[1] + nums[2];</span><br><span class="line">      int diff = Math.abs(result - target);</span><br><span class="line">      if (diff == 0) return result;</span><br><span class="line">      for (int i = 0; i &lt; nums.length - 2; i ++) &#123;</span><br><span class="line">          boolean right = false;</span><br><span class="line">          int j = i + 1;</span><br><span class="line">          int k = nums.length - 1;</span><br><span class="line">          for (; j &lt; k - 1; ) &#123;</span><br><span class="line">              right = !right;</span><br><span class="line">              if (right) &#123;</span><br><span class="line">                  k = binarySearch(nums, j + 1, k, target - nums[i] - nums[j], true);</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                  j = binarySearch(nums, j, k - 1, target - nums[i] - nums[k], false);</span><br><span class="line">              &#125;</span><br><span class="line">              int temp = nums[i] + nums[j] + nums[k];</span><br><span class="line">              if (temp &lt; target) &#123;</span><br><span class="line">                  int d = target - temp;</span><br><span class="line">                  if (d &lt; diff) &#123;</span><br><span class="line">                      result = temp;</span><br><span class="line">                      diff = d;</span><br><span class="line">                  &#125;</span><br><span class="line">                  if (d == 0) &#123;</span><br><span class="line">                      return result;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                  int d = temp -target;</span><br><span class="line">                  if (d &lt; diff) &#123;</span><br><span class="line">                      result = temp;</span><br><span class="line">                      diff = d;</span><br><span class="line">                  &#125;</span><br><span class="line">                  if (d == 0) &#123;</span><br><span class="line">                      return result;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          int temp = nums[i] + nums[j] + nums[k];</span><br><span class="line">          if (temp &lt; target) &#123;</span><br><span class="line">              int d = target - temp;</span><br><span class="line">              if (d &lt; diff) &#123;</span><br><span class="line">                  result = temp;</span><br><span class="line">                  diff = d;</span><br><span class="line">              &#125;</span><br><span class="line">              if (d == 0) &#123;</span><br><span class="line">                  return result;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">              int d = temp -target;</span><br><span class="line">              if (d &lt; diff) &#123;</span><br><span class="line">                  result = temp;</span><br><span class="line">                  diff = d;</span><br><span class="line">              &#125;</span><br><span class="line">              if (d == 0) &#123;</span><br><span class="line">                  return result;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public int binarySearch(int[] nums, int left, int right, int target, boolean large) &#123;</span><br><span class="line">      if (large &amp;&amp; nums[right] &lt; target) return right;</span><br><span class="line">      if (!large &amp;&amp; nums[left] &gt; target) return left;</span><br><span class="line">      do &#123;</span><br><span class="line">          int pivot = (left + right)/2;</span><br><span class="line">          if (nums[pivot] == target) &#123;</span><br><span class="line">              return pivot;</span><br><span class="line">          &#125; else if (nums[pivot] &gt; target) &#123;</span><br><span class="line">              right = pivot;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">              left = pivot;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; while (left &lt; right - 1);</span><br><span class="line">      if (large) &#123;</span><br><span class="line">          return nums[left] &gt; target? left: right;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">          return nums[right] &lt; target? right: left;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong><br>Runtime: 2 ms, faster than 99.84% of Java online submissions for 3Sum Closest.<br>Memory Usage: 36.7 MB, less than 100.00% of Java online submissions for 3Sum Closest.</p>
+<h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><p>Use the binary search to update the close method. whose complexity is between O(n) to O(logn).</p>
+<h3 id="Fastest-Answer"><a href="#Fastest-Answer" class="headerlink" title="Fastest Answer"></a>Fastest Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">public int threeSumClosest(int[] nums, int target) &#123;</span><br><span class="line"></span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line"></span><br><span class="line">    int delta = Integer.MAX_VALUE;</span><br><span class="line">    int output = nums[0] + nums[1] + nums[2];</span><br><span class="line"></span><br><span class="line">    for(int i = 0; i &lt; nums.length - 2; i++) &#123;</span><br><span class="line"></span><br><span class="line">      if(i &gt; 0 &amp;&amp; nums[i] == nums[i - 1]) continue;</span><br><span class="line"></span><br><span class="line">      int twoSumTarget = target - nums[i];</span><br><span class="line">      int low = nums[i + 1] + nums[i + 2];</span><br><span class="line">      int high = nums[nums.length - 1] + nums[nums.length - 2];</span><br><span class="line"></span><br><span class="line">      if(twoSumTarget == high || twoSumTarget == low) return target;</span><br><span class="line">      if(twoSumTarget &gt; high) &#123;</span><br><span class="line">        if(twoSumTarget - high &lt; delta) &#123;</span><br><span class="line">          delta = twoSumTarget - high;</span><br><span class="line">          output = nums[i] + high;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else if(twoSumTarget &lt; low) &#123;</span><br><span class="line">        if(low - twoSumTarget &lt; delta) &#123;</span><br><span class="line">          delta = low - twoSumTarget;</span><br><span class="line">          output = nums[i] + low;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        int start = i + 1;</span><br><span class="line">        int end = nums.length - 1;</span><br><span class="line"></span><br><span class="line">        while(start &lt; end) &#123;</span><br><span class="line"></span><br><span class="line">          int twoSum = nums[start] + nums[end];</span><br><span class="line"></span><br><span class="line">          if(twoSumTarget == twoSum) return target;</span><br><span class="line">          else if(twoSumTarget &gt; twoSum) &#123;</span><br><span class="line">            if(twoSumTarget - twoSum &lt; delta) &#123;</span><br><span class="line">              delta = twoSumTarget - twoSum;</span><br><span class="line">              output = nums[i] + twoSum;</span><br><span class="line">            &#125;</span><br><span class="line">            start++;</span><br><span class="line">          &#125;</span><br><span class="line">          else &#123;</span><br><span class="line">            if(twoSum - twoSumTarget &lt; delta) &#123;</span><br><span class="line">              delta = twoSum - twoSumTarget;</span><br><span class="line">              output = nums[i] + twoSum;</span><br><span class="line">            &#125;</span><br><span class="line">            end--;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return output;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong><br>Runtime: 1 ms, faster than 100.00% of Java online submissions for 3Sum Closest.<br>Memory Usage: 36 MB, less than 100.00% of Java online submissions for 3Sum Closest.</p>
+<h3 id="Analysis-2"><a href="#Analysis-2" class="headerlink" title="Analysis"></a>Analysis</h3><p>Optimization at the outest level will get the better optimization.</p>
+<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<h3 id="Analysis-3"><a href="#Analysis-3" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<p><strong>Summary</strong></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论. </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>3SumClosest</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-03, 12:01:59</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-05, 15:01:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/08/03/3SumClosest/" title="3SumClosest">https://binbinbear.github.io/blog/2019/08/03/3SumClosest/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/blog/img/alipay.jpeg" class="alipay" title="扫码支持">
+            <img src="/blog/img/weixin.jpeg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/blog/js/script.js?v=1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#leetcode',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/photo">相册</a>
+    
+    
+    
+</div>
+
+
+</html>
