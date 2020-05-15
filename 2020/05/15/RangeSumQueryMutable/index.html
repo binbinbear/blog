@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>ZigZagConversion | Hexo</title>
+  <title>RangeSumQueryMutable | Hexo</title>
   <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="ZigZagConversion | Hexo">
+  <meta name="description" content="RangeSumQueryMutable | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Question: 307 –  nameExample1  abdfalsdkfjla i   a   a    Example2  abc  Note Analysis 12345class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; solution(int[] A) &amp;#123;    &amp;#125;&amp;#125;  123class Solut">
 <meta name="keywords" content="leetcode">
@@ -462,9 +462,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-ZigZagConversion" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-RangeSumQueryMutable" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">ZigZagConversion</h1>
+        <h1 class="article-title">RangeSumQueryMutable</h1>
     
     <div class="article-meta">
         
@@ -486,7 +486,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-23 23:08:04'>2019-07-23 22:44</time>
+        创建时间:<time class="date" title='更新时间: 2020-05-15 10:57:36'>2020-05-15 10:56</time>
         
     </div>
     <div class="article-meta">
@@ -508,7 +508,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-6-–-ZigZagConversion"><span class="toc-text">Question: 6 –  ZigZagConversion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-307-–-name"><span class="toc-text">Question: 307 –  name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -523,30 +523,23 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question-6-–-ZigZagConversion"><a href="#Question-6-–-ZigZagConversion" class="headerlink" title="Question: 6 –  ZigZagConversion"></a>Question: 6 –  ZigZagConversion</h2><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure>
-
-<p>And then read line by line: “PAHNAPLSIIGYIR”</p>
-<p>Write the code that will take a string and make this conversion given a number of rows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example1</strong></p>
+        <h2 id="Question-307-–-name"><a href="#Question-307-–-name" class="headerlink" title="Question: 307 –  name"></a>Question: 307 –  name</h2><p><strong>Example1</strong></p>
 <blockquote>
-<p>Input: s = “PAYPALISHIRING”, numRows = 3<br>Output: “PAHNAPLSIIGYIR”</p>
+<p>abdfalsdkfjla i   a   a  </p>
 </blockquote>
 <p><strong>Example2</strong></p>
 <blockquote>
-<p>Input: s = “PAYPALISHIRING”, numRows = 4<br>Output: “PINALSIGYAHRPI”<br>Explanation:</p>
-<p>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p>
+<p>abc</p>
 </blockquote>
 <p><strong>Note</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public String convert(String s, int numRows) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Analysis</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; solution(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def convert(self, s, numRows):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :type numRows: int</span><br><span class="line">        :rtype: str</span><br><span class="line">        &quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
 
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public String convert(String s, int numRows) &#123;</span><br><span class="line">        if (s == null || s.length() &lt;= numRows) return s;</span><br><span class="line">        if (numRows == 1) return s;</span><br><span class="line">        int len = s.length();</span><br><span class="line">        int point = numRows * 2 - 2;</span><br><span class="line">        StringBuffer stringBuffer = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; len; i += point)</span><br><span class="line">            stringBuffer.append(s.charAt(i));</span><br><span class="line">        for (int i = 1; i &lt; numRows - 1; i ++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; len; j += point) &#123;</span><br><span class="line">                int left = j + i;</span><br><span class="line">                int right = j + point - i;</span><br><span class="line">                if (left &gt;= len) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    stringBuffer.append(s.charAt(left));</span><br><span class="line">                &#125;</span><br><span class="line">                if (right &gt;= len) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    stringBuffer.append(s.charAt(right));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = numRows - 1; i &lt; len; i += point)</span><br><span class="line">            stringBuffer.append(s.charAt(i));</span><br><span class="line">        return stringBuffer.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
-<p><strong>Result</strong><br>Runtime: 3 ms, faster than 96.04% of Java online submissions for ZigZag Conversion.<br>Memory Usage: 38.3 MB, less than 81.83% of Java online submissions for ZigZag Conversion.</p>
+<p><strong>Result</strong></p>
 <h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
@@ -570,12 +563,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>ZigZagConversion</p>
+    <p><span class="copy-title">文章标题:</span>RangeSumQueryMutable</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-23, 22:44:12</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-23, 23:08:04</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/23/ZigZagConversion/" title="ZigZagConversion">https://binbinbear.github.io/blog/2019/07/23/ZigZagConversion/</a>
+    <p><span class="copy-title">发布时间:</span>2020-05-15, 10:56:30</p>
+    <p><span class="copy-title">最后更新:</span>2020-05-15, 10:57:36</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2020/05/15/RangeSumQueryMutable/" title="RangeSumQueryMutable">https://binbinbear.github.io/blog/2020/05/15/RangeSumQueryMutable/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
