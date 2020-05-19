@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>LargestTimeFromDigits | Hexo</title>
+  <title>BestTimeToBuyAndSellStockWithCooldown | Hexo</title>
   <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="LargestTimeFromDigits | Hexo">
+  <meta name="description" content="BestTimeToBuyAndSellStockWithCooldown | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Question: 307 – RangeSumQueryMutableGiven a int array nums, find the summary of elements between indicies i and j;The update (i, val) function modifies nums by updating the element at index i to val.">
 <meta name="keywords" content="leetcode">
@@ -494,9 +494,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-LargestTimeFromDigits" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-BestTimeToBuyAndSellWithCooldown" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">LargestTimeFromDigits</h1>
+        <h1 class="article-title">BestTimeToBuyAndSellStockWithCooldown</h1>
     
     <div class="article-meta">
         
@@ -518,7 +518,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-17 23:44:18'>2019-07-17 23:34</time>
+        创建时间:<time class="date" title='更新时间: 2020-05-18 10:08:37'>2020-05-16 07:54</time>
         
     </div>
     <div class="article-meta">
@@ -540,7 +540,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quesion-949-Largest-Time-for-Given-Digits"><span class="toc-text">Quesion: 949. Largest Time for Given Digits</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><span class="toc-text">Question: 309 –  Best Time to Buy and Sell Stock with Cooldown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -555,13 +555,40 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Quesion-949-Largest-Time-for-Given-Digits"><a href="#Quesion-949-Largest-Time-for-Given-Digits" class="headerlink" title="Quesion: 949. Largest Time for Given Digits"></a>Quesion: 949. Largest Time for Given Digits</h2><p>Given an array of 4 digits, return the largest 24 hour time that can be made.</p>
-<p>The smallest 24 hour time is 00:00, and the largest is 23:59.  Starting from 00:00, a time is larger if more time has elapsed since midnight.</p>
-<p>Return the answer as a string of length 5.  If no valid time can be made, return an empty string.</p>
+        <h2 id="Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><a href="#Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown" class="headerlink" title="Question: 309 –  Best Time to Buy and Sell Stock with Cooldown"></a>Question: 309 –  Best Time to Buy and Sell Stock with Cooldown</h2><p>Say you have an array for which the ith element is the price of given stock on day i.</p>
+<p>Design a algorithm to find maximum profit.</p>
+<p>*. You may not enaged in multiple transactions at the same time.(You must sell stock before you buy again).<br>*. After you sell stock, you can not buy stock on next day. (ie. cooldown 1 day).</p>
 <p><strong>Example1</strong></p>
 <blockquote>
-<p>Input: [1,2,3,4]<br>Output: “23:41”</p>
+<p>input: [1,2,3,0,2]<br>output: 3<br>Explanation: transactions = [buy, sell, cooldown, buy, sell]</p>
 </blockquote>
+<p><strong>Note</strong></p>
+<p><strong>Analysis</strong><br>如果按没有cooldown的方法，依旧从数组前往后遍历，则无法在使用贪心，一次遍历得出最优解,后面的股票高低会决定前面的股票是否早一天卖，预留出一个冷却时间.<br>所以后项会需要前项的不同结果,考虑用数组记录前项的不同结果，用动态规划做.</p>
+<p>考虑定义在f(index) = 在第index天前卖出交易的最大累计利润<br>公式:<br>    退化成一般的dp，f[index] = max(f[index - 1], f[i] + prices[index] - pricies[i + 2]); i &lt;= index - 2;</p>
+<p>但这边无法定义出很好的f的意义，使得计算dp的时间复杂度比 O(n**2) 之下</p>
+<p>但考虑到有限状态机，这里的复杂度可以继续下降<br>由于同一时间，不能同时进行多个交易，所以用有限状态机来描述。这边的有限状态机和之前的dp的不一样的地方是，一般的dp就定义了一个记录f，利用之前的f不停的计算下一个f，而要只让f依赖于前有限个f的话这边的信息是不够的，由于价格的增高会影响到之前的决策，比如，之前在价格为5的时候买入，而紧跟着的是价格为2的，这个时候你应该不在价格为5的时候买入，而应选择晚一个时间，在价格为2的时候买入，但如果只有一个f的数组的dp信息，无法得知之前的买入价格，无法做出如下的决定. 但这里的有限自动状态机也是利用的空间换时间的概念. 当然如果写出了有限自动状态机，如果可以抽象的话有可能优化空间复杂度,反而降低空间复杂度.</p>
+<p>本来可以只定义两个状态buy和sell,但这边增加了一个限制条件sell 完要经过一天才能到buy，所以增加了一个状态reset,进而定义状态转移方式</p>
+<p>定义初值 buy[0] = -prices[0];<br>       sell[0] = 0;<br>       rest[0] = 0;</p>
+<p>for (i ++) {<br>int oriRest = rest;<br>rest = max(rest, sell);<br>buy = max(buy, oriRest - prices[i]);<br>sell = max(sell, buy + prices[i]);<br>}</p>
+<p>return max(sell, rest);</p>
+<p>最后遍历一遍数组，求出maximum 最大的利润.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; solution(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+
+<p><strong>Result</strong></p>
+<p><strong>Summary</strong></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论. </span>
@@ -575,12 +602,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>LargestTimeFromDigits</p>
+    <p><span class="copy-title">文章标题:</span>BestTimeToBuyAndSellStockWithCooldown</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-17, 23:34:55</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-17, 23:44:18</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/07/17/LargestTimeFromDigits/" title="LargestTimeFromDigits">https://binbinbear.github.io/blog/2019/07/17/LargestTimeFromDigits/</a>
+    <p><span class="copy-title">发布时间:</span>2020-05-16, 07:54:34</p>
+    <p><span class="copy-title">最后更新:</span>2020-05-18, 10:08:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2020/05/16/BestTimeToBuyAndSellWithCooldown/" title="BestTimeToBuyAndSellStockWithCooldown">https://binbinbear.github.io/blog/2020/05/16/BestTimeToBuyAndSellWithCooldown/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
