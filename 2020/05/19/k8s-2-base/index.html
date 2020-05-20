@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>BestTimeToBuyAndSellStockWithCooldown | Hexo</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="BestTimeToBuyAndSellStockWithCooldown | Hexo">
+  <title>k8s-1-Installtion | Hexo</title>
+  <meta name="keywords" content=" k8s ">
+  <meta name="description" content="k8s-1-Installtion | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="设置网卡 123456789[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0TYPE=EthernetBOOTPROTO=static ## 可以是dhcp也可以直接设置静态ipNAME=eth0    ## 网卡名，必须和文件名的ifcfg-xxx的后缀名字一致DEVICE=eth0  ## 和上个name一致ON">
 <meta property="og:type" content="article">
@@ -521,9 +521,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-BestTimeToBuyAndSellStockWithCooldown" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-k8s-2-base" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">BestTimeToBuyAndSellStockWithCooldown</h1>
+        <h1 class="article-title">k8s-1-Installtion</h1>
     
     <div class="article-meta">
         
@@ -531,21 +531,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="leetcode">leetcode</a>
+                <a href="javascript:" data-rel="k8s">k8s</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color4">k8s</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-05-16 07:56:31'>2020-05-16 07:54</time>
+        创建时间:<time class="date" title='更新时间: 2020-05-20 17:11:07'>2020-05-19 18:00</time>
         
     </div>
     <div class="article-meta">
@@ -567,7 +567,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><span class="toc-text">Question: 309 –  Best Time to Buy and Sell Stock with Cooldown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prepare-Env"><span class="toc-text">Prepare Env</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要组件"><span class="toc-text">主要组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要主键"><span class="toc-text">重要主键</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -582,33 +582,24 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"><a href="#Question-309-–-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown" class="headerlink" title="Question: 309 –  Best Time to Buy and Sell Stock with Cooldown"></a>Question: 309 –  Best Time to Buy and Sell Stock with Cooldown</h2><p><strong>Example1</strong></p>
-<blockquote>
-<p>abc</p>
-</blockquote>
-<p><strong>Example2</strong></p>
-<blockquote>
-<p>abc</p>
-</blockquote>
-<p><strong>Note</strong></p>
-<p><strong>Analysis</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; solution(int[] A) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line"></span><br><span class="line">    def solute(self, num):</span><br></pre></td></tr></table></figure>
-
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
-
-<p><strong>Result</strong></p>
-<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
-
-<p><strong>Result</strong></p>
-<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
-
-<p><strong>Result</strong></p>
-<h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
-
-<p><strong>Result</strong></p>
-<p><strong>Summary</strong></p>
+        <p>[TOC]</p>
+<h2 id="Prepare-Env"><a href="#Prepare-Env" class="headerlink" title="Prepare Env"></a>Prepare Env</h2><h3 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h3><ol>
+<li><p>APIServer: 所有组件访问的统一路口</p>
+</li>
+<li><p>ControllerManager： 维护所副本的期望输</p>
+</li>
+<li><p>Scheduler： 负责介绍任务，选择合适的node进行分配</p>
+</li>
+<li><p>etcd: 键值数据库，持久化, 存储重要信息</p>
+</li>
+<li><p>kubelete: 管理容器生命周期</p>
+</li>
+<li><p>kubeproxy: 负责写入规则，实现负载规则</p>
+</li>
+</ol>
+<h3 id="重要主键"><a href="#重要主键" class="headerlink" title="重要主键"></a>重要主键</h3><ol>
+<li>coreDNS: 为SVR</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论. </span>
@@ -622,12 +613,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>BestTimeToBuyAndSellStockWithCooldown</p>
+    <p><span class="copy-title">文章标题:</span>k8s-1-Installtion</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-05-16, 07:54:34</p>
-    <p><span class="copy-title">最后更新:</span>2020-05-16, 07:56:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2020/05/16/BestTimeToBuyAndSellStockWithCooldown/" title="BestTimeToBuyAndSellStockWithCooldown">https://binbinbear.github.io/blog/2020/05/16/BestTimeToBuyAndSellStockWithCooldown/</a>
+    <p><span class="copy-title">发布时间:</span>2020-05-19, 18:00:10</p>
+    <p><span class="copy-title">最后更新:</span>2020-05-20, 17:11:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2020/05/19/k8s-2-base/" title="k8s-1-Installtion">https://binbinbear.github.io/blog/2020/05/19/k8s-2-base/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
