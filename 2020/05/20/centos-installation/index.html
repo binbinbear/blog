@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>SearchInsertPosition | Hexo</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="SearchInsertPosition | Hexo">
+  <title>centos-installation | Hexo</title>
+  <meta name="keywords" content>
+  <meta name="description" content="centos-installation | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[TOC] Prepare Env Set host name 12345678[root@linux-node1 ~]# cat /etc/hostname linux-node1.example.com[root@linux-node2 ~]# cat /etc/hostname linux-node2.example.com[root@linux-node3 ~]# cat /etc/hos">
 <meta name="keywords" content="k8s">
@@ -514,9 +514,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-SearchInsertPosition" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-centos-installation" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">SearchInsertPosition</h1>
+        <h1 class="article-title">centos-installation</h1>
     
     <div class="article-meta">
         
@@ -524,21 +524,15 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="leetcode">leetcode</a>
+                <a href="javascript:" data-rel="teck">teck</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">leetcode</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-12 10:25:02'>2019-08-12 10:03</time>
+        创建时间:<time class="date" title='更新时间: 2020-05-20 17:08:16'>2020-05-20 16:57</time>
         
     </div>
     <div class="article-meta">
@@ -560,7 +554,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Question-35-–-Search-Insert-Position"><span class="toc-text">Question: 35 –  Search Insert Position</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#My-Java-Answer"><span class="toc-text">My Java Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer-1"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Header2"><span class="toc-text">Header2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer"><span class="toc-text">Second Answer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-Answer"><span class="toc-text">Python Answer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Answer"><span class="toc-text">First Answer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-1"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Second-Answer-1"><span class="toc-text">Second Answer</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -575,37 +569,29 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question-35-–-Search-Insert-Position"><a href="#Question-35-–-Search-Insert-Position" class="headerlink" title="Question: 35 –  Search Insert Position"></a>Question: 35 –  Search Insert Position</h2><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
-<p>You may assume no duplicates in the array.</p>
-<p><strong>Example1</strong></p>
-<blockquote>
-<p>Input: [1,3,5,6], 5<br>Output: 2</p>
-</blockquote>
-<p><strong>Example2</strong></p>
-<blockquote>
-<p>Input: [1,3,5,6], 2<br>Output: 1</p>
-</blockquote>
-<p><strong>Example3</strong></p>
-<blockquote>
-<p>Input: [1,3,5,6], 7<br>Output: 4</p>
-</blockquote>
-<p><strong>Example4</strong></p>
-<blockquote>
-<p>Input: [1,3,5,6], 0<br>Output: 0</p>
-</blockquote>
-<p><strong>Note</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int searchInsert(int[] nums, int target) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>** 设置网卡 **</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">BOOTPROTO=static ## 可以是dhcp也可以直接设置静态ip</span><br><span class="line">NAME=eth0    ## 网卡名，必须和文件名的ifcfg-xxx的后缀名字一致</span><br><span class="line">DEVICE=eth0  ## 和上个name一致</span><br><span class="line">ONBOOT=yes   ## 开机启动</span><br><span class="line">IPADDR=192.168.56.11</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.56.2  ## 网关</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def searchInsert(self, nums, target):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type target: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        &quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="My-Java-Answer"><a href="#My-Java-Answer" class="headerlink" title="My Java Answer"></a>My Java Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public int searchInsert(int[] nums, int target) &#123;</span><br><span class="line">  if (nums == null || nums.length == 0) return 0; </span><br><span class="line">  int len = nums.length;</span><br><span class="line">  if (target &lt;= nums[0]) return 0;</span><br><span class="line">  if (target &gt; nums[len - 1]) return len;</span><br><span class="line"></span><br><span class="line">  return binarySearch(nums, 0, len - 1, target);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private int binarySearch(int[] nums, int left, int right, int target) &#123;</span><br><span class="line">  if (nums[left] &gt;= target) return left;</span><br><span class="line">  if (nums[right] &lt; target) return right + 1;</span><br><span class="line">  while (left + 1 &lt; right) &#123;</span><br><span class="line">    int pivot = (left + right) / 2;</span><br><span class="line">    if (nums[pivot] == target) &#123;</span><br><span class="line">      return pivot;</span><br><span class="line">    &#125; else if (nums[pivot] &gt; target) &#123;</span><br><span class="line">      right = pivot;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      left = pivot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">  return right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>** 更改网卡名称 **</p>
+<ol>
+<li><p>调动上个问题，将网卡的ifcfg-xxx改名为ifcfg-eth0 同时修改里面NAME和DEVICE属性</p>
+</li>
+<li><p>更改/etc/default/grub启动菜单传递给内核的参数, 添加 net.ifnames=0 biosdevname=0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]# ls -ld /etc/sysconfig/grub </span><br><span class="line">lrwxrwxrwx. 1 root root 17 Aug 26  2017 /etc/sysconfig/grub -&gt; /etc/default/grub</span><br><span class="line">[root@server ~]# vi /etc/default/grub </span><br><span class="line">GRUB_TIMEOUT=5</span><br><span class="line">GRUB_DISTRIBUTOR=&quot;$(sed &apos;s, release .*$,,g&apos; /etc/system-release)&quot;</span><br><span class="line">GRUB_DEFAULT=saved</span><br><span class="line">GRUB_DISABLE_SUBMENU=true</span><br><span class="line">GRUB_TERMINAL_OUTPUT=&quot;console&quot;</span><br><span class="line">GRUB_CMDLINE_LINUX=&quot;crashkernel=auto  net.ifnames=0 biosdevname=0 rhgb quiet&quot;  #添加GRUB_CMDLINE_LINUX变量net.ifnames=0 biosdevname=0</span><br><span class="line">GRUB_DISABLE_RECOVERY=&quot;true&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新生成grub菜单并更新内核参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]# grub2-mkconfig -o /boot/grub2/grub.cfg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reboot</p>
+</li>
+</ol>
+<h3 id="Header2"><a href="#Header2" class="headerlink" title="Header2"></a>Header2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
-<p>Runtime: 0 ms, faster than 100.00% of Java online submissions for Search Insert Position.<br>Memory Usage: 38.8 MB, less than 100.00% of Java online submissions for Search Insert Position.</p>
 <h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer"><a href="#Second-Answer" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
-<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer-1"><a href="#First-Answer-1" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
+<h2 id="Python-Answer"><a href="#Python-Answer" class="headerlink" title="Python Answer"></a>Python Answer</h2><h3 id="First-Answer"><a href="#First-Answer" class="headerlink" title="First Answer"></a>First Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
 
 <p><strong>Result</strong></p>
 <h3 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Second-Answer-1"><a href="#Second-Answer-1" class="headerlink" title="Second Answer"></a>Second Answer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def</span><br></pre></td></tr></table></figure>
@@ -625,12 +611,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>SearchInsertPosition</p>
+    <p><span class="copy-title">文章标题:</span>centos-installation</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Bernie Chen">Bernie Chen</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-12, 10:03:48</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-12, 10:25:02</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2019/08/12/SearchInsertPosition/" title="SearchInsertPosition">https://binbinbear.github.io/blog/2019/08/12/SearchInsertPosition/</a>
+    <p><span class="copy-title">发布时间:</span>2020-05-20, 16:57:39</p>
+    <p><span class="copy-title">最后更新:</span>2020-05-20, 17:08:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/blog/2020/05/20/centos-installation/" title="centos-installation">https://binbinbear.github.io/blog/2020/05/20/centos-installation/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
